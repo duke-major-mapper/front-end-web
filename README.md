@@ -1,6 +1,6 @@
 ## Note from Aman
 
-Please use `yarn` to run scripts rather than `npm`, `yarn` is faster and more efficent than `npm` and if we will deploy this, we can only have one of the npm or yarn lock files. [Look here on how to install yarn](https://yarnpkg.com/lang/en/docs/install/).
+Please use `yarn` to run scripts rather than `npm`, `yarn` is faster and more efficent than `npm` because when we will deploy this app, we can only have one of the npm or yarn lock files. [Look here on how to install yarn](https://yarnpkg.com/lang/en/docs/install/).
 
 To run project with yarn:
 
