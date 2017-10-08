@@ -1,0 +1,9 @@
+@media (min-width: 992px) {
+  .true-dock {
+    margin-left: 256px;
+  }
+
+  .false-dock {
+    margin-left: 0px;
+  }
+}

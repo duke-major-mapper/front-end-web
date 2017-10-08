@@ -3,3 +3,6 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+@import url('./App.css');
+@import url('./Home.css');

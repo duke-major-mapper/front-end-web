@@ -11,13 +11,14 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 // Components and Containers
 import Header from './../components/Header';
+import Home from './Home';
 
 import reducers from "./../reducers";
 
 // Styling
 import logo from './../images/react_logo.svg';
 import theme from '../global/material-ui-theme';
-import './../styles/App.css';
+import './../styles/index.css';
 
 injectTapEventPlugin();
 
@@ -45,6 +46,7 @@ class App extends Component {
         <div>
           <MuiThemeProvider muiTheme={theme}>
             <Header />
+            <Home />
           </MuiThemeProvider>
           { <DevTools /> }
         </div>
