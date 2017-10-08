@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 
-
+import Welcome from './../components/Page/Welcome';
 
 class Home extends Component {
 
@@ -11,7 +11,7 @@ class Home extends Component {
       <div
         className={sidebar.docked ? "true-dock" : "false-dock"}
       >
-        Test
+        <Welcome />
       </div>
     );
   }

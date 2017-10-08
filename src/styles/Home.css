@@ -7,3 +7,16 @@
     margin-left: 0px;
   }
 }
+
+.home-jumbotron {
+    max-width:800px;
+    margin: 0 auto;
+    width: 50%;
+    background-color: rgb(209, 207, 207);
+    padding-top: 5px;
+    position: relative;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    text-align: center;
+    transform: translateY(300%);
+}
