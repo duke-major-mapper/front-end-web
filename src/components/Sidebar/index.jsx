@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {bindActionCreators} from 'redux';
-import { connect } from "react-redux";
-import { RaisedButton } from "material-ui";
+import { connect } from 'react-redux';
+import { RaisedButton } from 'material-ui';
 
-import { buttonTriggered } from "./../../actions/sidebar-action";
+import { buttonTriggered } from './../../actions/sidebar-action';
+import DropDown from './DropDown';
 
 class Sidebar extends Component {
   onButtonClicked() {
@@ -14,6 +15,8 @@ class Sidebar extends Component {
 
     return (
       <div>
+        <DropDown  label="Select Major 1" />
+        <DropDown  label="Select Major 2" />
         <RaisedButton
           label="Submit"
           fullWidth={true}
