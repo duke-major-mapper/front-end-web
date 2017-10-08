@@ -4,3 +4,9 @@ export const dockTriggered = () => {
     type: "DOCK_TRIGGERED"
   }
 }
+
+export const buttonTriggered = () => {
+  return {
+    type: "BUTTON_PRESS"
+  }
+}

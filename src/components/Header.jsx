@@ -7,6 +7,7 @@ import {
 } from 'material-ui';
 
 import { dockTriggered } from "./../actions/sidebar-action";
+import Sidebar from "./Sidebar"
 
 class Header extends Component {
   onMenuClick() {
@@ -23,7 +24,9 @@ class Header extends Component {
         <Drawer
           docked={this.props.sidebar.docked}
           containerStyle={{height: 'calc(100% - 64px)', top: 64}}
-        />
+        >
+          <Sidebar />
+        </Drawer>
       </div>
     )
   }

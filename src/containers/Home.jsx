@@ -6,12 +6,12 @@ import Welcome from './../components/Page/Welcome';
 class Home extends Component {
 
   render(){
-    const { sidebar } = this.props
+    const { sidebar, } = this.props
     return(
       <div
         className={sidebar.docked ? "true-dock" : "false-dock"}
       >
-        <Welcome />
+        {!sidebar.submitted ? <Welcome /> : null}
       </div>
     );
   }
