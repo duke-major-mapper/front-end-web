@@ -20,7 +20,11 @@ export default class DropDown extends Component {
         onChange={this.handleChange.bind(this)}
         value={this.state.value}
         style={{
-          paddingTop: '25px'
+          paddingTop: '25px',
+          paddingLeft: '15px'
+        }}
+        floatingLabelStyle={{
+          color: 'black'
         }}
       >
         <MenuItem value={1} primaryText="" />
