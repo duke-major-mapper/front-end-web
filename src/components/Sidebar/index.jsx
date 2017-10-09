@@ -15,8 +15,8 @@ class Sidebar extends Component {
 
     return (
       <div>
-        <DropDown  label="Select Major 1" />
-        <DropDown  label="Select Major 2" />
+        <DropDown majorNum={1}/>
+        <DropDown majorNum={2} />
         <RaisedButton
           label="Submit"
           fullWidth={true}

@@ -10,3 +10,11 @@ export const buttonTriggered = () => {
     type: "BUTTON_PRESS"
   }
 }
+
+export const majorChanged = (major_num, newMajor) => {
+  const type = "MAJOR" + major_num + "_CHANGE"
+  return {
+    type: type,
+    major: newMajor
+  }
+}
