@@ -7,7 +7,20 @@ import { buttonTriggered } from './../../actions/sidebar-action';
 import DropDown from './DropDown';
 
 class Sidebar extends Component {
+  state = {
+    error: '',
+  };
+
   onButtonClicked() {
+    if(this.props.major1 === ''){
+      this.setState({error: 'Please enter a Major 1.'})
+      return;
+    }
+    else if (this.props.major1 === this.props.major2){
+      this.setState({error: 'Please select different Majors.'})
+      return;
+    }
+    this.setState({error: ''})
     this.props.buttonTriggered();
   }
 
@@ -26,6 +39,7 @@ class Sidebar extends Component {
             marginTop: '25px'
           }}
         />
+        <div className="error-mess">{this.state.error}</div>
       </div>
     );
   }
@@ -33,7 +47,9 @@ class Sidebar extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    submitted: state.submitted
+    submitted: state.sidebar.submitted,
+    major1: state.sidebar.major1,
+    major2: state.sidebar.major2
   }
 };
 
