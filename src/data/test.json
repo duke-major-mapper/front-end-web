@@ -1,0 +1,230 @@
+{
+  "Computer Science":
+  [
+    {
+      "class_name": "ut at dolor quis",
+      "class_code": 321
+    }, {
+      "class_name": "eget massa tempor convallis",
+      "class_code": 301
+    }, {
+      "class_name": "eros suspendisse accumsan tortor",
+      "class_code": 217
+    }, {
+      "class_name": "justo morbi",
+      "class_code": 342
+    }, {
+      "class_name": "commodo vulputate",
+      "class_code": 201
+    }, {
+      "class_name": "amet cursus id",
+      "class_code": 316
+    }, {
+      "class_name": "pede ullamcorper augue a",
+      "class_code": 221
+    }, {
+      "class_name": "eget massa",
+      "class_code": 380
+    }, {
+      "class_name": "ac nibh fusce",
+      "class_code": 335
+    }, {
+      "class_name": "volutpat erat quisque erat",
+      "class_code": 123
+    }, {
+      "class_name": "at feugiat non pretium",
+      "class_code": 135
+    }, {
+      "class_name": "sociis natoque",
+      "class_code": 130
+    }, {
+      "class_name": "vestibulum rutrum rutrum neque",
+      "class_code": 391
+    }, {
+      "class_name": "lacus morbi quis",
+      "class_code": 193
+    }, {
+      "class_name": "tristique in",
+      "class_code": 149
+    }, {
+      "class_name": "donec quis orci",
+      "class_code": 391
+    }, {
+      "class_name": "montes nascetur ridiculus mus",
+      "class_code": 354
+    }, {
+      "class_name": "urna pretium nisl",
+      "class_code": 175
+    }, {
+      "class_name": "aenean fermentum",
+      "class_code": 304
+    }, {
+      "class_name": "sed accumsan felis ut",
+      "class_code": 270
+    }, {
+      "class_name": "in porttitor pede",
+      "class_code": 361
+    }, {
+      "class_name": "habitasse platea dictumst morbi",
+      "class_code": 305
+    }, {
+      "class_name": "rutrum rutrum",
+      "class_code": 103
+    }, {
+      "class_name": "ac neque duis",
+      "class_code": 278
+    }
+  ],
+  "Economics":
+  [
+    {
+      "class_name": "iaculis diam erat",
+      "class_code": 244
+    }, {
+      "class_name": "non mauris",
+      "class_code": 296
+    }, {
+      "class_name": "sapien cursus vestibulum proin",
+      "class_code": 285
+    }, {
+      "class_name": "ligula suspendisse ornare consequat",
+      "class_code": 245
+    }, {
+      "class_name": "ultrices libero",
+      "class_code": 106
+    }, {
+      "class_name": "magnis dis",
+      "class_code": 350
+    }, {
+      "class_name": "mi integer ac neque",
+      "class_code": 222
+    }, {
+      "class_name": "tempus sit amet",
+      "class_code": 219
+    }, {
+      "class_name": "ante vestibulum ante",
+      "class_code": 297
+    }, {
+      "class_name": "nec molestie",
+      "class_code": 260
+    }, {
+      "class_name": "aliquam quis turpis eget",
+      "class_code": 238
+    }, {
+      "class_name": "vel pede",
+      "class_code": 164
+    }, {
+      "class_name": "mauris viverra diam",
+      "class_code": 253
+    }, {
+      "class_name": "habitasse platea dictumst etiam",
+      "class_code": 157
+    }, {
+      "class_name": "ultrices posuere cubilia",
+      "class_code": 331
+    }, {
+      "class_name": "quam a odio",
+      "class_code": 305
+    }, {
+      "class_name": "semper est quam",
+      "class_code": 246
+    }, {
+      "class_name": "orci mauris lacinia sapien",
+      "class_code": 269
+    }, {
+      "class_name": "condimentum id luctus nec",
+      "class_code": 105
+    }, {
+      "class_name": "rutrum neque",
+      "class_code": 101
+    }, {
+      "class_name": "lacus at velit vivamus",
+      "class_code": 259
+    }, {
+      "class_name": "erat vestibulum",
+      "class_code": 183
+    }, {
+      "class_name": "ridiculus mus",
+      "class_code": 114
+    }, {
+      "class_name": "penatibus et magnis",
+      "class_code": 326
+    }
+  ],
+  "Math":
+  [
+    {
+      "class_name": "lectus suspendisse potenti in",
+      "class_code": 322
+    }, {
+      "class_name": "purus phasellus",
+      "class_code": 163
+    }, {
+      "class_name": "convallis morbi",
+      "class_code": 137
+    }, {
+      "class_name": "sit amet consectetuer",
+      "class_code": 281
+    }, {
+      "class_name": "justo nec condimentum",
+      "class_code": 184
+    }, {
+      "class_name": "curae mauris viverra diam",
+      "class_code": 365
+    }, {
+      "class_name": "et eros vestibulum",
+      "class_code": 279
+    }, {
+      "class_name": "leo maecenas",
+      "class_code": 295
+    }, {
+      "class_name": "faucibus orci",
+      "class_code": 399
+    }, {
+      "class_name": "ante nulla justo",
+      "class_code": 266
+    }, {
+      "class_name": "sit amet",
+      "class_code": 256
+    }, {
+      "class_name": "augue vel accumsan",
+      "class_code": 316
+    }, {
+      "class_name": "justo nec condimentum neque",
+      "class_code": 252
+    }, {
+      "class_name": "ipsum dolor",
+      "class_code": 285
+    }, {
+      "class_name": "pretium iaculis diam",
+      "class_code": 243
+    }, {
+      "class_name": "leo maecenas pulvinar",
+      "class_code": 259
+    }, {
+      "class_name": "tortor id nulla ultrices",
+      "class_code": 122
+    }, {
+      "class_name": "pede posuere nonummy integer",
+      "class_code": 294
+    }, {
+      "class_name": "vestibulum ante ipsum",
+      "class_code": 186
+    }, {
+      "class_name": "curae donec pharetra magna",
+      "class_code": 325
+    }, {
+      "class_name": "suspendisse ornare consequat lectus",
+      "class_code": 163
+    }, {
+      "class_name": "pellentesque at nulla",
+      "class_code": 198
+    }, {
+      "class_name": "cras pellentesque",
+      "class_code": 203
+    }, {
+      "class_name": "curabitur convallis duis",
+      "class_code": 198
+    }
+  ]
+}

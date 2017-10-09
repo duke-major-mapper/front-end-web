@@ -9,21 +9,41 @@ import {
 import { majorChanged } from "./../../actions/sidebar-action";
 
 
-const majorList = [
-  '',
-  'Computer Science',
-  'Economics',
-  'Math',
-]
+let majorList = ['']
 
 class DropDown extends Component {
-  state = {
-    value: 0,
-  };
+  constructor(props){
+    super(props);
+    /**
+     * [state description]
+     * @number {value} - this holds the MenuItem value for the SelectField to hold
+     */
+    this.state = {
+      value: 0,
+    };
+    // majorList will concat with the kets of the classes json, hence, the name of the majors
+    majorList = majorList.concat(Object.keys(props.classes).sort())
+    // this will remove any duplicate items in the array which can occur when using concat()
+    majorList = majorList.filter((item, pos) => {return majorList.indexOf(item) === pos});
+  }
 
   handleChange (event, index, value){
+    // majorChanged is an action; refer to sidebar-action.js to see what it does
     this.props.majorChanged(this.props.majorNum, majorList[value])
+    // changes SelectField value
     this.setState({value});
+  }
+
+  /**
+   * [mapMenuItems description]
+   * @return {[React Components]} [Returns a list of an undefinite number of MenuItems]
+   */
+  mapMenuItems() {
+    return majorList.map((value, index) => {
+      return (
+        <MenuItem key={index} value={index} primaryText={value} />
+      )
+    })
   }
 
   render() {
@@ -40,17 +60,15 @@ class DropDown extends Component {
           color: 'black'
         }}
       >
-        <MenuItem value={0} primaryText={majorList[0]} />
-        <MenuItem value={1} primaryText={majorList[1]} />
-        <MenuItem value={2} primaryText={majorList[2]} />
-        <MenuItem value={3} primaryText={majorList[3]} />
+        {this.mapMenuItems()}
       </SelectField>
     );
   }
 }
 const mapStateToProps = (state) => {
   return {
-    sidebar: state.sidebar
+    sidebar: state.sidebar,
+    classes: state.classes
   }
 }
 
