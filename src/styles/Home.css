@@ -18,5 +18,10 @@
     padding-bottom: 5px;
     border-radius: 10px;
     text-align: center;
-    transform: translateY(300%);
+    transform: translateY(100%);
+
+}
+
+.test {
+  font: 'Roboto';
 }

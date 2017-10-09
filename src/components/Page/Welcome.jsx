@@ -3,16 +3,14 @@ import { Jumbotron } from 'react-bootstrap';
 
 export default class Welcome extends Component {
   render(){
-    const styles = {
-      background: 'black'
-    }
-
     return(
-      <div>
+      <div >
         <Jumbotron
           className="home-jumbotron"
         >
-          <h2>Welcome to Duke Major Planner</h2>
+          <h1 className="test">Welcome to Duke Major Planner</h1>
+          <h3>Please select two majors on the right to find which classes are needed for each major.</h3>
+          <p>Duke Major Planner</p>
         </Jumbotron>
       </div>
     );
