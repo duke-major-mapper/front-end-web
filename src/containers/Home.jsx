@@ -23,7 +23,7 @@ class Home extends Component {
             major={sidebar.major1}
             majorClasses={classes[sidebar.major1]}
           />}
-          { sidebar.major2 === '' ? null :
+          { sidebar.major2 === '' || showWelcome ? null :
             <MajorTable
               major={sidebar.major2}
               majorClasses={classes[sidebar.major2]}
