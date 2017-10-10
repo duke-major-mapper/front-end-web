@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 
 import Welcome from './../components/Page/Welcome';
+import MajorTable from './../components/Page/MajorTable';
 
 let showWelcome = true
 
 class Home extends Component {
 
   render(){
-    const { sidebar } = this.props
+    const { sidebar, classes } = this.props
 
     if (sidebar.submitted){
       showWelcome = false
@@ -17,8 +18,17 @@ class Home extends Component {
       <div
         className={sidebar.docked ? "true-dock" : "false-dock"}
       >
-        {showWelcome ? <Welcome /> : null}
-        {!sidebar.submitted ? null : null}
+        {showWelcome ? <Welcome /> :
+          <MajorTable
+            major={sidebar.major1}
+            majorClasses={classes[sidebar.major1]}
+          />}
+          { sidebar.major2 === '' ? null :
+            <MajorTable
+              major={sidebar.major2}
+              majorClasses={classes[sidebar.major2]}
+            />
+          }
       </div>
     );
   }
@@ -26,7 +36,8 @@ class Home extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    sidebar: state.sidebar
+    sidebar: state.sidebar,
+    classes: state.classes
   }
 };
 
