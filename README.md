@@ -7,7 +7,13 @@ To run project with yarn:
 ### `yarn install`
 ### `yarn start`
 
+## Recent Screenshots
+
+![Imgur](https://i.imgur.com/sLVLdMo.png)
+
 --------------------
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
