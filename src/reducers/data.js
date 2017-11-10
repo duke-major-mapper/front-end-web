@@ -33,6 +33,29 @@ function data(state = initialState, action) {
         error: false,
       }
     }
+    case 'BEGIN_GET_CLASSES': {
+      return {
+        ...state,
+        isLoading: true,
+        error: false,
+        errorMessage: null,
+      };
+    }
+    case 'FAILED_GET_CLASSES': {
+      return {
+        ...state,
+        error: true,
+        errorMessage: action.payload.message,
+      }
+    }
+    case 'END_GET_CLASSES': {
+      return {
+        ...state,
+        classes: action.payload.data.data,
+        isLoading: false,
+        error: false,
+      }
+    }
     default: {
       return state;
     }

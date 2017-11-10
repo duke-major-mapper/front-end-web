@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { bindActionCreators } from 'redux';
+
+import { getClasses } from './../../actions/data';
+
 import {
   Table,
   TableBody,
@@ -8,13 +13,19 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 
-export default class MajorTable extends Component {
+class MajorTable extends Component {
 
-  mapClasses() {
-    return this.props.majorClasses.map((value, index) => {
+  componentWillMount() {
+    const { majors } = this.props;
+    const id = majors.indexOf(this.props.major) + 1;
+    this.props.getClasses(id);
+  }
+
+  mapClasses = () => {
+    return this.props.data.classes.map((value, index) => {
       return (
         <TableRow key={index}>
-          <TableRowColumn>{value.class_name}</TableRowColumn>
+          <TableRowColumn>{value.name}</TableRowColumn>
           <TableRowColumn>{value.class_code}</TableRowColumn>
         </TableRow>
       )
@@ -65,3 +76,22 @@ export default class MajorTable extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    sidebar: state.sidebar,
+    classes: state.classes,
+    data: state.data,
+    majors: state.data.majors,
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(
+    {
+      getClasses: getClasses,
+    },
+    dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MajorTable);

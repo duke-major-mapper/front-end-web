@@ -15,10 +15,6 @@ class Header extends Component {
     this.props.dockTriggered();
   }
 
-  componentWillMount() {
-    this.props.getAllMajors();
-  }
-
   render() {
     return (
       <div>
