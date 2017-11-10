@@ -7,9 +7,11 @@ import {
 } from "material-ui";
 
 import { majorChanged } from "./../../actions/sidebar-action";
+import { getAllMajors } from './../../actions/data';
 
 
 let majorList = ['']
+let isFirstRender = true;
 
 class DropDown extends Component {
   constructor(props){
@@ -21,10 +23,18 @@ class DropDown extends Component {
     this.state = {
       value: 0,
     };
-    // majorList will concat with the kets of the classes json, hence, the name of the majors
-    majorList = majorList.concat(Object.keys(props.classes).sort())
-    // this will remove any duplicate items in the array which can occur when using concat()
-    majorList = majorList.filter((item, pos) => {return majorList.indexOf(item) === pos});
+  }
+
+  componentWillMount() {
+    this.props.getAllMajors();
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.majors.length > 0 && isFirstRender) {
+      // majorList will concat name of majors
+      majorList = majorList.concat(newProps.majors);
+      isFirstRender = false;
+    }
   }
 
   handleChange (event, index, value){
@@ -68,14 +78,17 @@ class DropDown extends Component {
 const mapStateToProps = (state) => {
   return {
     sidebar: state.sidebar,
-    classes: state.classes
+    classes: state.classes,
+    data: state.data,
+    majors: state.data.majors,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(
     {
-      majorChanged: majorChanged
+      majorChanged: majorChanged,
+      getAllMajors: getAllMajors,
     },
     dispatch);
 };
