@@ -16,14 +16,6 @@ class Home extends Component {
     this.props.getAllMajors();
   }
 
-  getMajorClasses = (major) => {
-    const { majors } = this.props;
-    const id = majors.indexOf(major) + 1;
-    // this.props.getClasses(id);
-    console.log(this.props.data.classes);
-    return this.props.classes[major];
-  }
-
   render(){
     const { sidebar, classes } = this.props
 
@@ -37,12 +29,10 @@ class Home extends Component {
         {showWelcome ? <Welcome /> :
           <MajorTable
             major={sidebar.major1}
-            majorClasses={this.getMajorClasses(sidebar.major1)}
           />}
           { sidebar.major2 === '' || showWelcome ? null :
             <MajorTable
               major={sidebar.major2}
-              majorClasses={this.getMajorClasses(sidebar.major1)}
             />
           }
       </div>

@@ -17,7 +17,7 @@ class MajorTable extends Component {
 
   componentWillMount() {
     const { majors } = this.props;
-    const id = majors.indexOf(this.props.major) + 1;
+    const id = majors.indexOf(this.props.major);
     this.props.getClasses(id);
   }
 
