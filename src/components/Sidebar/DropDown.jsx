@@ -25,10 +25,6 @@ class DropDown extends Component {
     };
   }
 
-  componentWillMount() {
-    this.props.getAllMajors();
-  }
-
   componentWillReceiveProps(newProps) {
     if (newProps.majors.length > 0 && isFirstRender) {
       // majorList will concat name of majors

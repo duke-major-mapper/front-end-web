@@ -7,11 +7,16 @@ import {
 } from 'material-ui';
 
 import { dockTriggered } from "./../actions/sidebar-action";
+import { getAllMajors } from './../actions/data';
 import Sidebar from "./Sidebar"
 
 class Header extends Component {
   onMenuClick() {
     this.props.dockTriggered();
+  }
+
+  componentWillMount() {
+    this.props.getAllMajors();
   }
 
   render() {
@@ -40,7 +45,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(
     {
-      dockTriggered: dockTriggered
+      dockTriggered: dockTriggered,
+      getAllMajors: getAllMajors,
     },
     dispatch);
 };
