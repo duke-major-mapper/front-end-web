@@ -1,3 +1,7 @@
+.sidebar-components {
+  margin: 6px;
+}
+
 .error-mess {
   color: red;
   padding: 25px;

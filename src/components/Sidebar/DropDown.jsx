@@ -60,7 +60,6 @@ class DropDown extends Component {
         value={this.state.value}
         style={{
           paddingTop: '25px',
-          paddingLeft: '15px'
         }}
         floatingLabelStyle={{
           color: 'black'

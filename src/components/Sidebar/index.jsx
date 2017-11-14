@@ -38,7 +38,9 @@ class Sidebar extends Component {
   render() {
 
     return (
-      <div>
+      <div
+        className="sidebar-components"
+      >
         <DropDown majorNum={1}/>
         <DropDown majorNum={2} />
         <RaisedButton
