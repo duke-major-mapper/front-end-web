@@ -11,7 +11,16 @@ import MajorTable from './../components/Page/MajorTable';
 import { getAllMajors } from './../actions/data';
 import { getClasses } from './../actions/data';
 
-let showWelcome = true
+let showWelcome = true;
+
+const cardStyles = {
+  margin: '10px',
+  padding: '10px',
+};
+
+const cardTitleStyle = {
+
+};
 
 class Home extends Component {
 
@@ -30,9 +39,11 @@ class Home extends Component {
         className={sidebar.docked ? "true-dock" : "false-dock"}
       >
         {showWelcome ? <Welcome /> :
-          <Card>
+          <Card
+            style={cardStyles}
+          >
             <CardHeader
-              title={sidebar.major1}
+              title={<h2>{sidebar.major1}</h2>}
               actAsExpander={true}
               showExpandableButton={true}
             />
@@ -46,9 +57,11 @@ class Home extends Component {
           </Card>
         }
           { sidebar.major2 === '' || showWelcome ? null :
-          <Card>
+          <Card
+            style={cardStyles}
+          >
             <CardHeader
-              title={sidebar.major2}
+              title={<h2>{sidebar.major2}</h2>}
               actAsExpander={true}
               showExpandableButton={true}
             />
@@ -62,7 +75,11 @@ class Home extends Component {
           </Card>
           }
           { data.isLoading && !showWelcome ?
-            <CircularProgress size={80} thickness={6} />
+            <CircularProgress
+              style={{ display: 'table', margin: '0 auto'}}
+              size={80}
+              thickness={6}
+            />
             : null}
       </div>
     );
