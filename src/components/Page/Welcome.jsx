@@ -10,8 +10,8 @@ export default class Welcome extends Component {
         <Jumbotron
           className="home-jumbotron"
         >
-          <h1 className="test">Welcome to Duke Major Planner</h1>
-          <h3>Please select two majors on the right to find which classes are needed for each major.</h3>
+          <h1 className="test">Welcome to DMM!</h1>
+          <h3>Please select one or two majors on the left to find which classes are needed for each major.</h3>
           <img src={DMM_letters} alt="DMM_letters" height='110em'/>
         </Jumbotron>
       </div>
