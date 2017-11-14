@@ -17,11 +17,10 @@ class MajorTable extends Component {
 
   componentWillMount() {
     const { majors, major } = this.props;
-    console.log(major);
     const id = majors.indexOf(major);
     this.props.getClasses(id);
   }
-  
+
   mapClasses = () => {
     const { majors, major, data } = this.props;
     const id = majors.indexOf(major);

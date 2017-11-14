@@ -28,7 +28,6 @@ class DropDown extends Component {
   componentWillReceiveProps(newProps) {
     if (newProps.majors.length > 0 && isFirstRender) {
       // majorList will concat name of majors
-      console.log(newProps.majors);
       majorList = newProps.majors;
       isFirstRender = false;
     }
