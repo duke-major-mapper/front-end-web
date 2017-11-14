@@ -38,12 +38,12 @@ class Home extends Component {
       <div
         className={sidebar.docked ? "true-dock" : "false-dock"}
       >
-        {showWelcome ? <Welcome /> :
+        {showWelcome|| !sidebar.submitted ? <Welcome /> :
           <Card
             style={cardStyles}
           >
             <CardHeader
-              title={<h2>{sidebar.major1}</h2>}
+              title={<h2 style={{ color: '#0d47a1' }}>{sidebar.major1 + ' (All Classes)'}</h2>}
               actAsExpander={true}
               showExpandableButton={true}
             />
@@ -56,23 +56,23 @@ class Home extends Component {
             </CardMedia>
           </Card>
         }
-          { sidebar.major2 === '' || showWelcome ? null :
-          <Card
-            style={cardStyles}
-          >
-            <CardHeader
-              title={<h2>{sidebar.major2}</h2>}
-              actAsExpander={true}
-              showExpandableButton={true}
-            />
-            <CardMedia
-              expandable={true}
+          { sidebar.major2 === '' || showWelcome || !sidebar.submitted ? null :
+            <Card
+              style={cardStyles}
             >
-              <MajorTable
-                major={sidebar.major2}
+              <CardHeader
+                title={<h2 style={{ color: '#0d47a1' }}>{sidebar.major2 + ' (All Classes)'}</h2>}
+                actAsExpander={true}
+                showExpandableButton={true}
               />
-            </CardMedia>
-          </Card>
+              <CardMedia
+                expandable={true}
+              >
+                <MajorTable
+                  major={sidebar.major2}
+                />
+              </CardMedia>
+            </Card>
           }
           { data.isLoading && !showWelcome ?
             <CircularProgress
