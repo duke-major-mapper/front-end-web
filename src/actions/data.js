@@ -26,7 +26,20 @@ const getClasses = (id) => (
   })
 )
 
+const getOverlap = (id1, id2) => (
+  crud({
+    dispatch: {
+      begin: 'BEGIN_GET_OVERLAP',
+      fail: 'FAILED_GET_OVERLAP',
+      end: 'END_GET_OVERLAP',
+    },
+    method: 'GET',
+    url: url + '/overlap?ids=' + id1 + ',' + id2
+  })
+)
+
 export {
   getAllMajors,
   getClasses,
+  getOverlap,
 };

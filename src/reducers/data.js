@@ -59,6 +59,29 @@ function data(state = initialState, action) {
         error: false,
       }
     }
+    case 'BEGIN_GET_OVERLAP': {
+      return {
+        ...state,
+        isLoading: true,
+        error: false,
+        errorMessage: null,
+      };
+    }
+    case 'FAILED_GET_OVERLAP': {
+      return {
+        ...state,
+        error: true,
+        errorMessage: action.payload.message,
+      }
+    }
+    case 'END_GET_OVERLAP': {
+      return {
+        ...state,
+        overlap: action.payload.data.data,
+        isLoading: false,
+        error: false,
+      }
+    }
     default: {
       return state;
     }

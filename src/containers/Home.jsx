@@ -7,6 +7,7 @@ import {Card, CardMedia, CardHeader} from 'material-ui/Card';
 
 import Welcome from './../components/Page/Welcome';
 import MajorTable from './../components/Page/MajorTable';
+import OverlapButton from './../components/Page/OverlapButton';
 
 import { getAllMajors } from './../actions/data';
 import { getClasses } from './../actions/data';
@@ -16,10 +17,6 @@ let showWelcome = true;
 const cardStyles = {
   margin: '10px',
   padding: '10px',
-};
-
-const cardTitleStyle = {
-
 };
 
 class Home extends Component {
@@ -74,13 +71,20 @@ class Home extends Component {
               </CardMedia>
             </Card>
           }
-          { data.isLoading && !showWelcome ?
-            <CircularProgress
-              style={{ display: 'table', margin: '0 auto'}}
-              size={80}
-              thickness={6}
-            />
-            : null}
+            {
+              sidebar.major2 && sidebar.submitted ?
+              <OverlapButton />
+              : null
+            }
+
+            {/* Loading Animation stays on the bottom */}
+            { data.isLoading && !showWelcome ?
+              <CircularProgress
+                style={{ display: 'table', margin: '0 auto'}}
+                size={80}
+                thickness={6}
+              />
+              : null}
       </div>
     );
   }
