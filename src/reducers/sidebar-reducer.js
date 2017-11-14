@@ -12,15 +12,15 @@ export default (state=defaultState, action) => {
       break;
     }
     case "BUTTON_PRESS": {
-      state = {...state, submitted: !state.submitted}
+      state = {...state, submitted: true}
       break;
     }
     case "MAJOR1_CHANGE": {
-      state = {...state, major1: action.major}
+      state = {...state, major1: action.major, submitted: false}
       break;
     }
     case "MAJOR2_CHANGE": {
-      state = {...state, major2: action.major}
+      state = {...state, major2: action.major, submitted: false}
       break;
     }
   }

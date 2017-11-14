@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { RaisedButton } from 'material-ui';
 
 import { buttonTriggered } from './../../actions/sidebar-action';
+import { getClasses } from './../../actions/data';
 import DropDown from './DropDown';
 
 class Sidebar extends Component {
@@ -12,16 +13,26 @@ class Sidebar extends Component {
   };
 
   onButtonClicked() {
-    if(this.props.major1 === ''){
+    const { data, majors, major1, major2, getClasses } = this.props;
+    if(major1 === ''){
       this.setState({error: 'Please enter a Major 1.'})
       return;
     }
-    else if (this.props.major1 === this.props.major2){
+    else if (major1 === major2){
       this.setState({error: 'Please select different Majors.'})
       return;
     }
     this.setState({error: ''})
     this.props.buttonTriggered();
+    const id1 = majors.indexOf(major1);
+    const id2 = majors.indexOf(major2);
+
+    if (!data.classes[id1]) {
+      getClasses(id1);
+    }
+    if (!data.classes[id2]) {
+      getClasses(id2);
+    }
   }
 
   render() {
@@ -49,14 +60,17 @@ const mapStateToProps = (state) => {
   return {
     submitted: state.sidebar.submitted,
     major1: state.sidebar.major1,
-    major2: state.sidebar.major2
+    major2: state.sidebar.major2,
+    data: state.data,
+    majors: state.data.majors,
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(
     {
-      buttonTriggered: buttonTriggered
+      buttonTriggered: buttonTriggered,
+      getClasses: getClasses,
     },
     dispatch);
 };

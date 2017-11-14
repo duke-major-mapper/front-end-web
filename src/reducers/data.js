@@ -1,7 +1,7 @@
 const initialState = {
   isLoading: false,
   majors: [],
-  classes: [],
+  classes: {},
   requirements: [],
   overlap: [],
   error: false,
@@ -49,9 +49,12 @@ function data(state = initialState, action) {
       }
     }
     case 'END_GET_CLASSES': {
+      let temp_classes = state.classes;
+      const data = action.payload.data;
+      temp_classes[data.id] = data.data;
       return {
         ...state,
-        classes: action.payload.data.data,
+        classes: temp_classes,
         isLoading: false,
         error: false,
       }

@@ -16,23 +16,34 @@ import {
 class MajorTable extends Component {
 
   componentWillMount() {
-    const { majors } = this.props;
-    const id = majors.indexOf(this.props.major);
+    const { majors, major } = this.props;
+    console.log(major);
+    const id = majors.indexOf(major);
     this.props.getClasses(id);
   }
-
+  
   mapClasses = () => {
-    return this.props.data.classes.map((value, index) => {
-      return (
-        <TableRow key={index}>
-          <TableRowColumn>{value.name}</TableRowColumn>
-          <TableRowColumn>{value.class_code}</TableRowColumn>
-        </TableRow>
-      )
-    })
+    const { majors, major, data } = this.props;
+    const id = majors.indexOf(major);
+    if (data.classes[id]) {
+      return data.classes[id].map((value, index) => {
+        return (
+          <TableRow key={index}>
+            <TableRowColumn>{value.name}</TableRowColumn>
+            <TableRowColumn>{value.class_code}</TableRowColumn>
+          </TableRow>
+        )
+      })
+    } else {
+      return null;
+    }
   }
 
   render() {
+    const { sidebar } = this.props;
+    if (!sidebar.submitted) {
+      return null;
+    }
 
     return (
       <div

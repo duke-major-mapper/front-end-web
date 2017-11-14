@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
 
+import CircularProgress from 'material-ui/CircularProgress';
+
 import Welcome from './../components/Page/Welcome';
 import MajorTable from './../components/Page/MajorTable';
 
@@ -17,7 +19,7 @@ class Home extends Component {
   }
 
   render(){
-    const { sidebar, classes } = this.props
+    const { sidebar, classes, data } = this.props
 
     if (sidebar.submitted){
       showWelcome = false
@@ -35,6 +37,9 @@ class Home extends Component {
               major={sidebar.major2}
             />
           }
+          { data.isLoading && !showWelcome ?
+            <CircularProgress size={80} thickness={6} />
+            : null}
       </div>
     );
   }
