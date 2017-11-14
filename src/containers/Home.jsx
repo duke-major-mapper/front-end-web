@@ -7,7 +7,7 @@ import {Card, CardMedia, CardHeader} from 'material-ui/Card';
 
 import Welcome from './../components/Page/Welcome';
 import MajorTable from './../components/Page/MajorTable';
-import OverlapButton from './../components/Page/OverlapButton';
+import Overlap from './../components/Page/Overlap';
 
 import { getAllMajors } from './../actions/data';
 import { getClasses } from './../actions/data';
@@ -73,7 +73,7 @@ class Home extends Component {
           }
             {
               sidebar.major2 && sidebar.submitted ?
-              <OverlapButton />
+              <Overlap />
               : null
             }
 

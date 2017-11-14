@@ -22,9 +22,18 @@ class MajorTable extends Component {
   }
 
   mapClasses = () => {
-    const { majors, major, data } = this.props;
+    const { majors, major, data, overlappedClasses } = this.props;
     const id = majors.indexOf(major);
-    if (data.classes[id]) {
+    if (overlappedClasses) {
+      return overlappedClasses.map((value, index) => {
+        return (
+          <TableRow key={index}>
+            <TableRowColumn>{value.name}</TableRowColumn>
+            <TableRowColumn>{value.class_code}</TableRowColumn>
+          </TableRow>
+        )
+      })
+    } else if (data.classes[id]) {
       return data.classes[id].map((value, index) => {
         return (
           <TableRow key={index}>

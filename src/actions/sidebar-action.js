@@ -18,3 +18,9 @@ export const majorChanged = (major_num, newMajor) => {
     major: newMajor
   }
 }
+
+export const overlapTriggered = () => {
+  return {
+    type: "OVERLAP_PRESS"
+  }
+}
