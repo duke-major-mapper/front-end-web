@@ -47,8 +47,7 @@ class MajorTable extends Component {
     return (
       <div
         style={{
-          margin: '15px',
-          borderStyle: 'solid'
+          margin: '15px'
         }}
       >
         <Table
@@ -59,17 +58,6 @@ class MajorTable extends Component {
             displaySelectAll={false}
             adjustForCheckbox={false}
           >
-            <TableRow>
-              <TableHeaderColumn
-                colSpan="2"
-                style={{
-                  textAlign: 'center',
-                  fontSize: '200%'
-                }}
-              >
-                {this.props.major}
-              </TableHeaderColumn>
-            </TableRow>
             <TableRow>
               <TableHeaderColumn style={{ textAlign: 'left' }}>Class Name</TableHeaderColumn>
               <TableHeaderColumn>Class Code</TableHeaderColumn>

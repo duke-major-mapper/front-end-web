@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
 
 import CircularProgress from 'material-ui/CircularProgress';
+import {Card, CardMedia, CardHeader} from 'material-ui/Card';
 
 import Welcome from './../components/Page/Welcome';
 import MajorTable from './../components/Page/MajorTable';
@@ -29,13 +30,36 @@ class Home extends Component {
         className={sidebar.docked ? "true-dock" : "false-dock"}
       >
         {showWelcome ? <Welcome /> :
-          <MajorTable
-            major={sidebar.major1}
-          />}
-          { sidebar.major2 === '' || showWelcome ? null :
-            <MajorTable
-              major={sidebar.major2}
+          <Card>
+            <CardHeader
+              title={sidebar.major1}
+              actAsExpander={true}
+              showExpandableButton={true}
             />
+            <CardMedia
+              expandable={true}
+            >
+              <MajorTable
+                major={sidebar.major1}
+              />
+            </CardMedia>
+          </Card>
+        }
+          { sidebar.major2 === '' || showWelcome ? null :
+          <Card>
+            <CardHeader
+              title={sidebar.major2}
+              actAsExpander={true}
+              showExpandableButton={true}
+            />
+            <CardMedia
+              expandable={true}
+            >
+              <MajorTable
+                major={sidebar.major2}
+              />
+            </CardMedia>
+          </Card>
           }
           { data.isLoading && !showWelcome ?
             <CircularProgress size={80} thickness={6} />
