@@ -8,7 +8,9 @@ import {
 
 import { dockTriggered } from "./../actions/sidebar-action";
 import { getAllMajors } from './../actions/data';
-import Sidebar from "./Sidebar"
+import Sidebar from "./Sidebar";
+
+import DMM_header from './../images/DMM_header.png';
 
 class Header extends Component {
   onMenuClick() {
@@ -16,11 +18,17 @@ class Header extends Component {
   }
 
   render() {
+    const logo = (
+      <div>
+        <img alt="logo" src={DMM_header} height="60em" width="280em"/>
+      </div>
+    );
     return (
       <div>
         <AppBar
-          title = "Duke Major Planner"
+          title={logo}
           onLeftIconButtonTouchTap={this.onMenuClick.bind(this)}
+          secondary={true}
         />
         <Drawer
           docked={this.props.sidebar.docked}
